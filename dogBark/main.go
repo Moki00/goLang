@@ -6,14 +6,13 @@ import (
 
 func main() {
 	poodle := Dog{"Poodle", 10, "Woof!"}
-	fmt.Println(poodle)
-	fmt.Printf("%+v\n", poodle)
-	fmt.Printf("Breed: %v\nWeight: %v\n", poodle.Breed, poodle.Weight)
+	fmt.Println(poodle) // Poodle 10 Woof
+	fmt.Printf("%+v\n", poodle)  // all k&v
+	fmt.Printf("Breed: %v\nWeight: %v\n", poodle.Breed, poodle.Weight) // specific
 
 	poodle.Speak()
 	poodle.Sound = "Arf!"
 	poodle.Speak()
-	poodle.SpeakThreeTimes()
 	poodle.SpeakThreeTimes()
 }
 
@@ -24,7 +23,7 @@ type Dog struct {
 	Sound  string
 }
 
-// Speak is how the dog speaks
+// Speak is the function. d Dog is the receiver
 func (d Dog) Speak() {
 	fmt.Println(d.Sound)
 }
